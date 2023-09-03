@@ -1,0 +1,28 @@
+.button {
+    grid-column-start: 1;
+    grid-column-end: 3;
+
+    @include breakpoints (small) {
+        grid-column-end: 1;
+    }
+
+    width: 100%;
+    max-width: 30rem;
+    padding: .8rem;
+    margin: 2rem auto .5rem;
+    background: linear-gradient(270deg, var(--colorMain) 0%, var(--strongBlue) 100%);
+    border: none;
+    border-radius: .3rem;
+    color: var(--white);
+    font-weight: 500;
+    font-size: 1rem;
+    transition: .5s cubic-bezier(.41, 0, 0, .99);
+    cursor: pointer;
+
+    &:hover {
+        text-shadow: .1rem .1rem .6rem rgba(0, 0, 0, 0.2);
+        font-size: 1.015rem;
+        box-shadow: .1rem .1rem .6rem rgba(0, 0, 0, 0.2);
+        border-radius: .9rem;
+    }
+}

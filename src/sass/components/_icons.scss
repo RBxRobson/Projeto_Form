@@ -1,0 +1,20 @@
+.icon {
+    position: absolute;
+    top: 20px;
+    right: 2px;
+    opacity: 0;
+    transition: .9s;
+    color: transparent;
+}
+
+.error i.fa-exclamation-circle {
+    font-size: 1.2rem;
+    color: var(--red);
+    opacity: 1;
+}
+
+.valid i.fa-check-circle {
+    font-size: 1.2rem;
+    color: var(--green);
+    opacity: 1;
+}

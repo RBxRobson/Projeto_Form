@@ -1,0 +1,25 @@
+.form {
+    position: relative;
+    max-width: 50rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 47.5% 47.5%; //100% => 550px
+    column-gap: 5%;
+    row-gap: .5rem; // 1rem => 550px
+
+    @include breakpoints (small) {
+        grid-template-columns: 1fr;
+        row-gap: 1rem;
+    }
+}
+
+.input-content {
+    position: relative;
+    height: 3rem;
+    transition: .3s ease-out;
+    margin-bottom: 0;
+}
+
+.input-content.error {
+    margin-bottom: 1rem;
+}

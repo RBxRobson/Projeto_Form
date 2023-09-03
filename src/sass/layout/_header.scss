@@ -1,0 +1,19 @@
+.header {
+    padding-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__title {
+        background-color: var(--colorMain);
+        background-image: linear-gradient(270deg, var(--colorMain) 0%, var(--strongBlue) 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        transition: 1s;
+
+        &:hover {
+            text-shadow: .1rem .1rem .6rem rgba(0, 0, 0, 0.2);
+        }
+    }
+}

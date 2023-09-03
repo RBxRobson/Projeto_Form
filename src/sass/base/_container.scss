@@ -1,0 +1,8 @@
+.container {
+    width: 70%; // 90% => 700px
+    margin: 0 auto;
+
+    @include breakpoints (medium) {
+        width: 90%;
+    }
+}
