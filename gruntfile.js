@@ -5,28 +5,28 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-replace');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         //* Config SASS *\\
-        sass: {
+        less: {
             //? Config pasta dev
             dev: {
                 //? Caminho do arquivo que será criado : Caminho do arquivo que será compilado
                 files: {
-                    'dev/styles/main.css': 'src/sass/main.scss'
+                    'dev/styles/main.css': 'src/less/main.less'
                 }
             },
             //? Config pasta dist 
             dist: {
                 //? Comprimindo o arquivo 
                 options: {
-                    style: 'compressed'
+                    compress: true
                 },
                 //? Caminho do arquivo que será criado : Caminho do arquivo que será comprimido
                 files: {
-                    'dist/styles/main.min.css': 'src/sass/main.scss'
+                    'dist/styles/main.min.css': 'src/less/main.less'
                 }
             }
         },
@@ -123,9 +123,9 @@ module.exports = function (grunt) {
         },
         //* Config watch, plugin que observa mudanças nos arquivos *\\
         watch: {
-            sass: {
-                files: ['src/sass/**/*.scss'],
-                tasks: ['sass:dev']
+            less: {
+                files: ['src/less/**/*.less'],
+                tasks: ['less:dev']
             },
             html: {
                 files: ['src/index.html'],
@@ -136,5 +136,5 @@ module.exports = function (grunt) {
         clean: ['prebuild']
     });
     grunt.registerTask('dev', ['watch']);
-    grunt.registerTask('build', ['sass:dist', 'htmlmin:dist', 'replace:dist', 'clean', 'uglify']);
+    grunt.registerTask('build', ['less:dist', 'htmlmin:dist', 'replace:dist', 'clean', 'uglify']);
 };
